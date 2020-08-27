@@ -1,4 +1,4 @@
-package br.com.brunamarcal.applicationnews.ui.home.viewmodel
+package br.com.brunamarcal.applicationnews.ui.activity.home.viewmodel
 
 import androidx.lifecycle.*
 import br.com.brunamarcal.applicationnews.core.State
@@ -7,7 +7,6 @@ import br.com.brunamarcal.applicationnews.repository.Repository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Response
 
 class HomeNewsViewModel (private val repository: Repository, private val ioDispatcher: CoroutineDispatcher): ViewModel(){
     private val newsResponseLiveData = MutableLiveData<State<NewsResponse>>()

@@ -4,10 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeNewsActivity">
+    tools:context=".ui.activity.home.HomeNewsActivity">
 
-   <androidx.recyclerview.widget.RecyclerView
+   <include
+       android:id="@+id/include"
+       layout="@layout/toolbar" />
+
+   <com.google.android.material.tabs.TabLayout
+       android:id="@+id/tabsMain"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+       android:layout_height="wrap_content"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/include"
+       app:tabBackground="@color/colorPrimary"
+       app:tabTextColor="@color/colorWhite" />
+
+   <androidx.viewpager.widget.ViewPager
+       android:id="@+id/viewPagerMain"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/tabsMain" />
+
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:id="@+id/bottomNavigation"
+       android:background="@color/colorBlue"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:itemTextColor="@color/colorWhite"
+       app:menu="@menu/bottom_navigation_menu"
+       app:itemIconTint="@drawable/bottom_navigation_item_color"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

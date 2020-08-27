@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.brunamarcal.applicationnews">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,9 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="br.com.brunamarcal.applicationnews.ui.home.HomeNewsActivity">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.fragment.everythingnews.EverythingNewsFragment"></activity>
+        <activity android:name=".ui.fragment.topnews.PopNewsFragment" />
+        <activity android:name=".ui.activity.home.HomeNewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

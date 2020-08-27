@@ -19,6 +19,7 @@ android {
 
         buildConfigField "String", "BASE_URL", "\"https://newsapi.org/v2/\""
         buildConfigField "String", "API_KEY", "\"df600a77399c4f47a3bacc117e19054d\""
+        buildConfigField "String", "BASE_URL_IMAGE", "\"https://i.insider.com/\""
 
     }
 
