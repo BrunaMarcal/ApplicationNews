@@ -6,6 +6,7 @@
     android:id="@+id/toolbarMain"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/actionBarSize"
-    android:background="#3D0291"
-    app:titleTextColor="@color/colorWhite" />
+    android:background="@color/colorBlack"
+    app:titleTextColor="@color/colorWhite">
 
+</androidx.appcompat.widget.Toolbar>

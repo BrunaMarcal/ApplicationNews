@@ -10,17 +10,17 @@ import br.com.brunamarcal.applicationnews.model.NewsResult
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_news.view.*
 
-class NewsAdapter(val newsList: List<NewsResult>): RecyclerView.Adapter<NewsAdapter.AdapterViewHolder>() {
+class NewsAdapter(private val newsList: List<NewsResult>): RecyclerView.Adapter<NewsAdapter.AdapterViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsAdapter.AdapterViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
         return AdapterViewHolder(itemView)
     }
 
     override fun getItemCount() = newsList.count()
 
-    override fun onBindViewHolder(holder: NewsAdapter.AdapterViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
+        holder.bind(newsList[position])
     }
 
     class AdapterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -34,8 +34,7 @@ class NewsAdapter(val newsList: List<NewsResult>): RecyclerView.Adapter<NewsAdap
             txtDate.text = news.publishedAt
 
             news.urlToImage.let {
-                picasso.load("""${BuildConfig.BASE_URL_IMAGE}${news.urlToImage}""")
-                    .into(image)
+                picasso.load(news.urlToImage).into(image)
             }
         }
     }

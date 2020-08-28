@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home_news.*
 import kotlinx.coroutines.Dispatchers
 
-class HomeNewsActivity : AppCompatActivity() {
+class HomeNewsActivity : AppCompatActivity(){
 
     private val fragmentAdapter = HomeNewsPageAdapter (supportFragmentManager)
 
@@ -25,6 +25,7 @@ class HomeNewsActivity : AppCompatActivity() {
             else -> false
         }
     }
+
     lateinit var viewModel: HomeNewsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
