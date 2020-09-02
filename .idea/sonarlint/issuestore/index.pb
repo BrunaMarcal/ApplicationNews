@@ -28,10 +28,8 @@ Yapp/src/main/java/br/com/brunamarcal/applicationnews/ui/activity/home/HomeNewsA
 î
 dapp/src/main/java/br/com/brunamarcal/applicationnews/ui/activity/home/viewmodel/HomeNewsViewModel.kt,6\b\6b2618da649cdb0760bfe84394bc3d92ad2c37f0
 ë
-aapp/src/main/java/br/com/brunamarcal/applicationnews/ui/fragment/national/NationalNewsFragment.kt,2\c\2c8a29b0dbc0ce5f754192110cae5a20f8dcc322
-ë
 aapp/src/main/java/br/com/brunamarcal/applicationnews/ui/fragment/business/BusinessNewsFragment.kt,0\f\0f41b1a87890f6797aa8f28aa5b1850346cde773
-è
-_app/src/main/java/br/com/brunamarcal/applicationnews/ui/fragment/politic/PoliticNewsFragment.kt,9\3\938fb9b20eab94e4fbf86a62480cead77b6812bc
 á
 Wapp/src/main/java/br/com/brunamarcal/applicationnews/pageadapter/HomeNewsPageAdapter.kt,b\2\b23cef05559e53cd9a058f5f22797b5e88b50a6d
+^
+.app/src/main/res/layout/activity_home_news.xml,3\4\34a5265524dc1706ea936def02e2eb44703618c9

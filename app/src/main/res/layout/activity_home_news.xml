@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.home.HomeNewsActivity">
 
-   <include
-       android:id="@+id/include"
-       layout="@layout/toolbar" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
 
-   <com.google.android.material.tabs.TabLayout
-       android:id="@+id/tabsMain"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/include"
-       app:tabBackground="@color/colorBlack"
-       app:tabTextColor="@color/colorWhite" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabsMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:tabBackground="@color/colorBlack"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/colorWhite" />
 
-   <androidx.viewpager.widget.ViewPager
-       android:id="@+id/viewPagerMain"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/tabsMain" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabsMain" />
 
-   <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/bottomNavigation"
-       android:background="@color/colorBlack"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:itemTextColor="@color/colorWhite"
-       app:menu="@menu/bottom_navigation_menu"
-       app:itemIconTint="@drawable/bottom_navigation_item_color"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        app:itemIconTint="@drawable/bottom_navigation_item_color"
+        app:itemTextColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

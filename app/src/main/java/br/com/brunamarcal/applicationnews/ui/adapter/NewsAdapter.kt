@@ -9,6 +9,7 @@ import br.com.brunamarcal.applicationnews.R
 import br.com.brunamarcal.applicationnews.model.NewsResult
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_news.view.*
+import java.text.SimpleDateFormat
 
 class NewsAdapter(private val newsList: List<NewsResult>): RecyclerView.Adapter<NewsAdapter.AdapterViewHolder>() {
 
@@ -31,11 +32,25 @@ class NewsAdapter(private val newsList: List<NewsResult>): RecyclerView.Adapter<
 
         fun bind(news: NewsResult){
             txtTitle.text = news.title
-            txtDate.text = news.publishedAt
+            txtDate.text = dataConversion(news.publishedAt, DATE_FORMAT_PATTERN, DATE_PATTERN)
+
 
             news.urlToImage.let {
                 picasso.load(news.urlToImage).into(image)
             }
         }
+    }
+
+    companion object {
+        fun dataConversion(date: String, dateFormatPattern: String, datePattern: String): String{
+            val inputFormat = SimpleDateFormat(dateFormatPattern)
+            val outputFormat = SimpleDateFormat(datePattern)
+            val _date = inputFormat.parse(date)
+
+            return outputFormat.format(_date)
+
+        }
+        private val DATE_FORMAT_PATTERN = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        private val DATE_PATTERN = "dd/MM/yyyy"
     }
 }

@@ -53,5 +53,6 @@ class PopNewsFragment : Fragment(R.layout.fragment_pop_news) {
          }
     }
 
+
 }
 
