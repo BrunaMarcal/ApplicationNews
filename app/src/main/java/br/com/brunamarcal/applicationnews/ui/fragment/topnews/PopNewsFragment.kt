@@ -1,5 +1,8 @@
 package br.com.brunamarcal.applicationnews.ui.fragment.topnews
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -13,6 +16,7 @@ import br.com.brunamarcal.applicationnews.repository.Repository
 import br.com.brunamarcal.applicationnews.ui.activity.home.viewmodel.HomeNewsViewModel
 import br.com.brunamarcal.applicationnews.ui.adapter.NewsAdapter
 import kotlinx.android.synthetic.main.fragment_pop_news.*
+import kotlinx.android.synthetic.main.item_news.view.*
 import kotlinx.coroutines.Dispatchers
 
 class PopNewsFragment : Fragment(R.layout.fragment_pop_news) {
@@ -37,10 +41,14 @@ class PopNewsFragment : Fragment(R.layout.fragment_pop_news) {
                              with(recyclerPopNews){
                                  layoutManager = LinearLayoutManager(context)
                                  setHasFixedSize(true)
-                                 adapter = NewsAdapter(it.newsResult)
+                                 adapter = NewsAdapter(it.newsResult){news ->
+                                     val intent = Intent (Intent.ACTION_VIEW, Uri.parse(news.url))
+                                     intent.putExtra("DATA_NEWS", news)
+                                     startActivity(intent)
+                                     }
+                                 }
                              }
                          }
-                     }
                      Status.ERROR -> {
                          Log.d("ERROR", "Error -> ${response.error}")
                      }

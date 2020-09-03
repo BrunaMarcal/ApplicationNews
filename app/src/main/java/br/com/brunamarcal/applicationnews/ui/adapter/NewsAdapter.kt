@@ -11,11 +11,12 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_news.view.*
 import java.text.SimpleDateFormat
 
-class NewsAdapter(private val newsList: List<NewsResult>): RecyclerView.Adapter<NewsAdapter.AdapterViewHolder>() {
+class NewsAdapter(private val newsList: List<NewsResult>, private val clickNews: ((news: NewsResult) -> Unit)):
+    RecyclerView.Adapter<NewsAdapter.AdapterViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
-        return AdapterViewHolder(itemView)
+        return AdapterViewHolder(itemView, clickNews)
     }
 
     override fun getItemCount() = newsList.count()
@@ -24,7 +25,7 @@ class NewsAdapter(private val newsList: List<NewsResult>): RecyclerView.Adapter<
         holder.bind(newsList[position])
     }
 
-    class AdapterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class AdapterViewHolder(itemView: View, private val clickNews: (news: NewsResult) -> Unit): RecyclerView.ViewHolder(itemView){
         private val txtTitle = itemView.txtNewsTitle
         private val txtDate = itemView.txtNewsDate
         private val image = itemView.urlToImage
@@ -34,9 +35,12 @@ class NewsAdapter(private val newsList: List<NewsResult>): RecyclerView.Adapter<
             txtTitle.text = news.title
             txtDate.text = dataConversion(news.publishedAt, DATE_FORMAT_PATTERN, DATE_PATTERN)
 
-
             news.urlToImage.let {
                 picasso.load(news.urlToImage).into(image)
+            }
+
+            itemView.setOnClickListener {
+                clickNews.invoke(news)
             }
         }
     }
