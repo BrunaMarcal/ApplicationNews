@@ -1,0 +1,21 @@
+package br.com.brunamarcal.applicationnews.ui.splash
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.Handler
+import br.com.brunamarcal.applicationnews.R
+import br.com.brunamarcal.applicationnews.ui.activity.home.HomeNewsActivity
+
+
+class SplashActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash_screen)
+
+        Handler().postDelayed({
+            startActivity (Intent ( this@SplashActivity, HomeNewsActivity::class.java))
+            finish()
+        }, 5000 )
+    }
+}
