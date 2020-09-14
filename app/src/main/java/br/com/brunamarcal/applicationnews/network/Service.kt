@@ -1,6 +1,7 @@
 package br.com.brunamarcal.applicationnews.network
 
 import br.com.brunamarcal.applicationnews.model.NewsResponse
+import br.com.brunamarcal.applicationnews.model.SourcesResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,11 +14,8 @@ interface Service {
     suspend fun getEverything(@Query("language") language: String,
                               @Query("q") q: String,
                               @Query("apiKey") apiKey: String): NewsResponse
+
+    @GET("sources")
+    suspend fun getSources(@Query("category") category: String,
+                           @Query("apiKey") apiKey: String): SourcesResponse
 }
-
-
-//https://newsapi.org/v2/everything?language=pt&q=android&apiKey=df600a77399c4f47a3bacc117e19054d
-
-//https://newsapi.org/v2/everything?q=bitcoin&apiKey=df600a77399c4f47a3bacc117e19054d
-
-//v2/everything? q=bitcoin & apiKey=df600a77399c4f47a3bacc117e19054d

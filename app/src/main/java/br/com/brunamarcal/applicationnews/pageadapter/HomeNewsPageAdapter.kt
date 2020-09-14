@@ -40,7 +40,7 @@ class HomeNewsPageAdapter(fm: FragmentManager): FragmentPagerAdapter(fm, BEHAVIO
             3 -> "Business"
             4 -> "Health"
             5 -> "Technology"
-            6 -> "Sport"
+            6 -> "Sports"
             7 -> "General"
             else -> null
         }

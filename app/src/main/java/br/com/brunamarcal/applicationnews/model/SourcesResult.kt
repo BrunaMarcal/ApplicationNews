@@ -5,25 +5,21 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class NewsResult(
+data class SourcesResult (
 
     @SerializedName("id")
-    val id: Int,
+    val id: String,
     @SerializedName("name")
     val name: String,
-    @SerializedName("author")
-    val author: String,
-    @SerializedName("title")
-    val title: String,
     @SerializedName("description")
     val description: String,
     @SerializedName("url")
     val url: String,
-    @SerializedName("urlToImage")
-    val urlToImage: String,
-    @SerializedName("publishedAt")
-    val publishedAt: String,
     @SerializedName("category")
-    val category: String
+    val category: String,
+    @SerializedName("language")
+    val language: String,
+    @SerializedName("country")
+    val country: String
 
 ): Parcelable

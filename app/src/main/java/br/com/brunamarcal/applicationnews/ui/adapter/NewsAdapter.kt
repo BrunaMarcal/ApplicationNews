@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.brunamarcal.applicationnews.BuildConfig
 import br.com.brunamarcal.applicationnews.R
 import br.com.brunamarcal.applicationnews.model.NewsResult
 import com.squareup.picasso.Picasso
@@ -54,7 +53,7 @@ class NewsAdapter(private val newsList: List<NewsResult>, private val clickNews:
             return outputFormat.format(_date)
 
         }
-        private val DATE_FORMAT_PATTERN = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        private val DATE_PATTERN = "dd/MM/yyyy"
+        private const val DATE_FORMAT_PATTERN = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        private const val DATE_PATTERN = "dd/MM/yyyy"
     }
 }
